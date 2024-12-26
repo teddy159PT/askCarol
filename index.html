@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Will You Be My Girlfriend?</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;700&display=swap"
+        rel="stylesheet">
     <style>
+        html{
+            height: 100%;
+        }
+
         body {
+            height: 100%;
             margin: 0;
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(to bottom, #ff7eb3, #ff758c);
@@ -15,6 +22,7 @@
             overflow: hidden;
             position: relative;
         }
+
         header {
             margin-top: 10vh;
             font-size: 2rem;
@@ -23,29 +31,36 @@
             z-index: 10;
             position: relative;
         }
+
         h1 {
             font-family: 'Pacifico', cursive;
             font-size: 3rem;
         }
+
         .floating-container {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1; /* Lower priority */
+            z-index: 1;
+            /* Lower priority */
         }
-        .heart, .cat {
+
+        .heart,
+        .cat {
             position: absolute;
             width: 50px;
             height: 50px;
             background-size: cover;
             animation: float 5s infinite ease-in-out;
         }
+
         .heart {
             background: red;
             transform: rotate(45deg);
         }
+
         .heart::before,
         .heart::after {
             content: '';
@@ -55,17 +70,21 @@
             background: red;
             border-radius: 50%;
         }
+
         .heart::before {
             top: -25px;
             left: 0;
         }
+
         .heart::after {
             left: 25px;
             top: 0;
         }
+
         .cat {
             background-image: url('./happy-happy-happy-cat.gif');
         }
+
         .button-container {
             margin-top: 20vh;
             display: flex;
@@ -73,9 +92,11 @@
             gap: 20px;
             flex-wrap: wrap;
             padding: 0 10px;
-            z-index: 10; /* Higher priority */
+            z-index: 10;
+            /* Higher priority */
             position: relative;
         }
+
         .btn {
             padding: 1rem 2rem;
             font-size: 1.5rem;
@@ -87,27 +108,35 @@
             animation: fadeIn 3s ease-in-out;
             min-width: 120px;
         }
+
         .btn:hover {
             background: #ffccdd;
         }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
         }
+
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0);
             }
+
             50% {
                 transform: translateY(-20px);
             }
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Carolina, Will you be my Girlfriend?</h1>
@@ -158,6 +187,7 @@
         }
     </script>
 </body>
+
 </html>
 
 
