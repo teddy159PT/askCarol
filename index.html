@@ -18,6 +18,7 @@
             margin-top: 10vh;
             font-size: 2rem;
             animation: fadeIn 2s ease-in-out;
+            padding: 0 10px;
         }
         h1 {
             font-family: 'Pacifico', cursive;
@@ -48,8 +49,15 @@
             left: 25px;
             top: 0;
         }
-        .btn {
+        .button-container {
             margin-top: 20vh;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 0 10px;
+        }
+        .btn {
             padding: 1rem 2rem;
             font-size: 1.5rem;
             background: #fff;
@@ -58,6 +66,7 @@
             border-radius: 10px;
             cursor: pointer;
             animation: fadeIn 3s ease-in-out;
+            min-width: 120px;
         }
         .btn:hover {
             background: #ffccdd;
@@ -82,11 +91,14 @@
 </head>
 <body>
     <header>
-        <h1>Will You Be My Girlfriend?</h1>
-        <p>You make my heart skip a beat every day.</p>
+        <h1>Carolina, Will you be my Girlfriend?</h1>
+        <p>You make me want to die less 😊.</p>
     </header>
 
-    <button class="btn" onclick="showMessage()">Yes 💖</button>
+    <div class="button-container">
+        <button class="btn" onclick="showYesMessage()">Yes 💖</button>
+        <button class="btn" onclick="showNoMessage()">No 😿</button>
+    </div>
 
     <script>
         // Floating hearts generator
@@ -100,9 +112,14 @@
         }
         setInterval(createHeart, 500);
 
-        // Show confirmation message
-        function showMessage() {
-            alert('Yay! You said yes! 💕');
+        // Show confirmation messages
+        function showYesMessage() {
+            alert('YESSSS! NICE GREAT AMAZING HEHEHEHEHE! 💕');
+            window.location("")
+        }
+
+        function showNoMessage() {
+            alert("Nuh uh! Try Again Bitch! 💔");
         }
     </script>
 </body>
