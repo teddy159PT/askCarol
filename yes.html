@@ -3,38 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yay!</title>
+    <title>Will You Be My Girlfriend?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(to bottom, #ff758c, #ff7eb3);
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #ff7eb3, #ff758c);
+            color: #fff;
+            text-align: center;
             overflow: hidden;
         }
-        .gif-container {
-            text-align: center;
-        }
-        .gif-container img {
-            max-width: 90%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        header {
+            margin-top: 10vh;
+            font-size: 2rem;
+            animation: fadeIn 2s ease-in-out;
+            padding: 0 10px;
         }
         h1 {
-            font-size: 2rem;
-            color: #fff;
-            margin-bottom: 20px;
+            font-family: 'Pacifico', cursive;
+            font-size: 3rem;
+        }
+        .heart, .cat {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-size: cover;
+            animation: float 5s infinite ease-in-out;
+        }
+        .heart {
+            background: red;
+            transform: rotate(45deg);
+        }
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -25px;
+            left: 0;
+        }
+        .heart::after {
+            left: 25px;
+            top: 0;
+        }
+        .cat {
+            background-image: url('./happy-happy-happy-cat.gif');
+        }
+        .button-container {
+            margin-top: 20vh;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 0 10px;
+        }
+        .btn {
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            background: #fff;
+            color: #ff758c;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            animation: fadeIn 3s ease-in-out;
+            min-width: 120px;
+        }
+        .btn:hover {
+            background: #ffccdd;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="gif-container">
-        <h1>YEEEES YOU SAID YES! Dança de Comemoração! 💕</h1>
-        <img src="./sesame-street-kermit-the-frog-funny-dancing-sepz40eiw7x4yerg.gif" alt="Celebration GIF">
+    <header>
+        <h1>Carolina, Will you be my Girlfriend?</h1>
+        <p>You make me want to die less 😊.</p>
+    </header>
+
+    <div class="button-container">
+        <button class="btn" onclick="showYesMessage()">Yes 💖</button>
+        <button class="btn" onclick="showNoMessage()">No 😿</button>
     </div>
+
+    <script>
+        // Floating hearts generator
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+
+        // Floating cats generator
+        function createCat() {
+            const cat = document.createElement('div');
+            cat.className = 'cat';
+            cat.style.left = Math.random() * 100 + 'vw';
+            cat.style.animationDuration = Math.random() * 3 + 3 + 's';
+            document.body.appendChild(cat);
+            setTimeout(() => cat.remove(), 6000);
+        }
+
+        setInterval(createHeart, 500);
+        setInterval(createCat, 3000);
+
+        // Show confirmation messages
+        function showYesMessage() {
+            alert('YESSSS! NICE GREAT AMAZING! 💕');
+            window.location.href = 'yes.html';
+        }
+
+        function showNoMessage() {
+            alert("Nuh uh! Try Again Bitch! 💔");
+        }
+    </script>
 </body>
 </html>
